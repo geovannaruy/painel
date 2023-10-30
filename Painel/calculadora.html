@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+        crossorigin="anonymous"></script>
+    <title>Calculadora de Porcentagem de Sementes por Hectares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+            border: 1px solid #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #088026;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<bod>
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    <div class="container">
+        <center>
+            <h1>Calculadora de Porcentagem de Sementes por Hectares</h1>
+        </center>
+        <label for="areaHectares">Área em Hectares:</label>
+        <input type="number" id="areaHectares" placeholder="Digite a área em hectares">
+        <label for="quantidadeSementes">Quantidade de Sementes:</label>
+        <input type="number" id="quantidadeSementes" placeholder="Digite a quantidade de sementes">
+        <button onclick="calcularPorcentagem()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularPorcentagem() {
+            const areaHectares = parseFloat(document.getElementById('areaHectares').value);
+            const quantidadeSementes = parseFloat(document.getElementById('quantidadeSementes').value);
+
+            if (!isNaN(areaHectares) && !isNaN(quantidadeSementes)) {
+                const porcentagem = (quantidadeSementes / areaHectares) * 100;
+                document.getElementById('resultado').innerHTML = `A quantidade de sementes representa ${porcentagem.toFixed(2)}% da área em hectares.`;
+            } else {
+                document.getElementById('resultado').innerHTML = 'Por favor, insira valores válidos.';
+            }
+        }3
+    </script>
+
+    <br></br>
+
+    <style>
+        .btn.btn-primary {
+            background-color: #088026;
+            /* Cor de fundo azul */
+            color: white;
+            /* Texto branco */
+            padding: 10px 20px;
+            /* Preenchimento interno */
+            border: none;
+            /* Sem borda */
+            border-radius: 5px;
+            /* Cantos arredondados */
+            text-decoration: none;
+            /* Remove sublinhado de link */
+            display: inline-block;
+            /* Torna o botão em linha */
+            font-size: 16px;
+            /* Tamanho da fonte */
+        }
+
+        .btn.btn-primary:hover {
+            background-color: #000000;
+            /* Cor de fundo mais escura quando hover */
+        }
+    </style>
+    <center><a href="index.html" class="btn btn-primary">Voltar</a></center>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+        crossorigin="anonymous"></script>
+    </body>
+
+</html>

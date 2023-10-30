@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Porcentagem de Fertilizantes por Hectares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #088026;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<bo>
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    <br> </br>
+    <div class="container">
+        <center>
+            <h1>Calculadora de Porcentagem de Fertilizantes por Hectares</h1>
+        </center>
+        <label for="areaHectares">Área em Hectares:</label>
+        <input type="number" id="areaHectares" placeholder="Digite a área em hectares">
+        <label for="quantidadeFertilizante">Quantidade de Fertilizante (kg):</label>
+        <input type="number" id="quantidadeFertilizante" placeholder="Digite a quantidade de fertilizante em kg">
+        <button onclick="calcularPorcentagem()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularPorcentagem() {
+            const areaHectares = parseFloat(document.getElementById('areaHectares').value);
+            const quantidadeFertilizante = parseFloat(document.getElementById('quantidadeFertilizante').value);
+
+            if (!isNaN(areaHectares) && !isNaN(quantidadeFertilizante)) {
+                const porcentagem = (quantidadeFertilizante / areaHectares) * 100;
+                document.getElementById('resultado').innerHTML = `A quantidade de fertilizante representa ${porcentagem.toFixed(2)}% da área em hectares.`;
+            } else {
+                document.getElementById('resultado').innerHTML = 'Por favor, insira valores válidos.';
+            }
+        }
+    </script>
+
+    <br> </br>
+
+    <style>
+        .btn.btn-primary {
+            background-color: #088026;
+            /* Cor de fundo azul */
+            color: white;
+            /* Texto branco */
+            padding: 10px 20px;
+            /* Preenchimento interno */
+            border: none;
+            /* Sem borda */
+            border-radius: 5px;
+            /* Cantos arredondados */
+            text-decoration: none;
+            /* Remove sublinhado de link */
+            display: inline-block;
+            /* Torna o botão em linha */
+            font-size: 16px;
+            /* Tamanho da fonte */
+        }
+
+        .btn.btn-primary:hover {
+            background-color: #000000;
+            /* Cor de fundo mais escura quando hover */
+        }
+    </style>
+    <center><a href="index.html" class="btn btn-primary">Voltar</a></center>
+
+    </body>
+
+</html>
